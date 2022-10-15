@@ -3,14 +3,16 @@
 - Translated from Chinese to English by ron.lee
   - original :  https://github.com/Max-cvv/IQA-website 
 
-- Limitation
+- Characteristics
   - It shows two images and the user should choose one with better quality.
+  - It allows zoom and panning of two images in a synchronised way.
   - It does not ask the user to score.
 
 
 ## Installation
-0. python3.6.9
+
 1. pip install -r requirements.txt
+   Django version should be below 3, or there would be errors.
 2. To use deepzoom [Python Deep Zoom Tools](https://github.com/openzoom/deepzoom.py)  
     `cd deepzoom; python setup.py install; cd ..`
 ## Usage
