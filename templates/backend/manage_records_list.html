@@ -2,27 +2,27 @@
 
 {% load staticfiles %}
 
-{% block title %}管理后台{% endblock %}
+{% block title %}Management backend{% endblock %}
 {% block external_header %}
 
 {% endblock %}
 {% block body %}
 
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">操作记录</h1>
+        <h1 class="page-header">Records List</h1>
 
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>用户id</th>
-                <th>图片1</th>
-                <th>图片2</th>
-                <th>选择结果</th>
-                <th>拖动操作</th>
-                <th>放缩操作</th>
-                <th>提交时间</th>
-                <th>操作</th>
+                <th>user id</th>
+                <th>image 1</th>
+                <th>image 2</th>
+                <th>selection result</th>
+                <th>panning</th>
+                <th>zoom</th>
+                <th>submit time</th>
+                <th>record</th>
               </tr>
             </thead>
             <tbody>
@@ -32,18 +32,18 @@
                 <td>D{{ record.device1 }}-CO{{ record.co1 }}-{{ record.img_num1 }}</td>
                 <td>D{{ record.device2 }}-CO{{ record.co2 }}-{{ record.img_num2 }}</td>
                 {% if record.result == 0 %}
-                <td>图片1</td>
+                <td>image 1</td>
                 {% else %}
                 {% if record.result == 1 %}
-                <td>图片2</td>
+                <td>image 2</td>
                 {% else %}
-                <td>未选择</td>
+                <td>not selected</td>
                 {% endif %}
                 {% endif %}
                 <td>{{ record.operation}}</td>
                 <td>{{ record.operation_scroll }}</td>
                 <td>{{ record.submit_time }}</td>
-                <td><a dest="/manage/record/delete/{{ record.id }}/" class="btn-sm btn-danger clear-data" role="button">删除</a></td>
+                <td><a dest="/manage/record/delete/{{ record.id }}/" class="btn-sm btn-danger clear-data" role="button">delete</a></td>
               </tr>
                 {% endfor %}
             </tbody>
@@ -62,7 +62,7 @@
 <script>
   $(".clear-data").click(function(){
     var a = $(this).attr("dest")
-    showModal("提示", "确定要删除该条记录吗？", "确认", a);
+    showModal("Show", "Do you really want to delete this record?", "Confirm", a);
   })
 </script>
 {% endblock %}

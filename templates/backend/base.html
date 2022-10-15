@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,12 +25,12 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">管理后台</a>
+            <a class="navbar-brand" href="#">Management Backend</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href = "/manage/excel/"><span class = "glyphicon glyphicon-download-alt"></span>导出Excel</a></li>
-              <li><a id = "logout" href="#">注销</a></li>
+              <li><a href = "/manage/excel/"><span class = "glyphicon glyphicon-download-alt"></span>export Excel</a></li>
+              <li><a id = "logout" href="#">log out</a></li>
             </ul>
           </div>
         </div>
@@ -41,12 +41,12 @@
         <div class="row">
           <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-              <li id = "manage_0" ><a href="/manage/0/">数据库</a></li>
-              <li id = "manage_1" ><a href="/manage/1/">用户列表</a></li>
-              <li id = "manage_2" ><a href="/manage/2/">操作记录</a></li>
-              <li id = "manage_3" ><a href="/manage/3/">问卷信息</a></li>
-              <li id = "manage_4" ><a href="/manage/4/">实时排名</a></li>
-              <li id = "manage_5" ><a href="/manage/5/">实验管理</a></li>
+              <li id = "manage_0" ><a href="/manage/0/">dataset</a></li>
+              <li id = "manage_1" ><a href="/manage/1/">user list</a></li>
+              <li id = "manage_2" ><a href="/manage/2/">log</a></li>
+              <li id = "manage_3" ><a href="/manage/3/">questionnare</a></li>
+              <li id = "manage_4" ><a href="/manage/4/">realtime ranking</a></li>
+              <li id = "manage_5" ><a href="/manage/5/">experiment management</a></li>
             </ul>
             
           </div>
@@ -54,7 +54,7 @@
         </div>
     </div>
     {% include 'modal.html' %}
-<script>$("#logout").click(function(){showModal("提示", "要退出吗？", "确认", "/manage/logout/");})</script>
+<script>$("#logout").click(function(){showModal("Show", "Do you want to log out?", "Confirm", "/manage/logout/");})</script>
 {% block external_js %}{% endblock %}
 </body>
 </html>

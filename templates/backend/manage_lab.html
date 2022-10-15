@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %}管理后台{% endblock %}
+{% block title %}Management backend{% endblock %}
 {% block external_header %}
 <style>
 .td-info{
@@ -16,18 +16,18 @@
 {% block body %}
 
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">实验列表 <a id = "newlab"href = "#" style="font-size: large;" title="新增实验"><span class="glyphicon glyphicon-plus"></span></a></h1>
+        <h1 class="page-header">experiment list <a id = "newlab"href = "#" style="font-size: large;" title="新增实验"><span class="glyphicon glyphicon-plus"></span></a></h1>
 
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
               <tr>
-                <th>实验id</th>
-                <th>已有参与者</th>
-                <th>有效评价数</th>
-                <th>状态</th>
+                <th>experiment id</th>
+                <th>if it has participant</th>
+                <th>number of valid assessment</th>
+                <th>status</th>
 
-                <th>操作</th>
+                <th>record</th>
               </tr>
             </thead>
             <tbody>
@@ -38,17 +38,17 @@
                 <td>{{ lab.record_num }}</td>
                 {% if is_start == 1 %}
                   {% if lab.status == 1 %}
-                  <td>开展中</td>
-                  <td><a href="/manage/5/update_status/{{ lab.id }}/" class=" btn-sm btn-danger" role="button" >开始/停止</a>
+                  <td>in progress</td>
+                  <td><a href="/manage/5/update_status/{{ lab.id }}/" class=" btn-sm btn-danger" role="button" >Start/Stop</a>
                   {% else %}
-                  <td>无</td>
-                  <td><a href="#" class="btn-sm btn-danger" role="button" onclick="tips()">开始/停止</a>
+                  <td>None</td>
+                  <td><a href="#" class="btn-sm btn-danger" role="button" onclick="tips()">Start/Stop</a>
                   {% endif %}
                 {% else %}
-                <td>无</td>
-                <td><a href="/manage/5/update_status/{{ lab.id }}/" class="btn-sm btn-danger" role="button">开始/停止</a>
+                <td>None</td>
+                <td><a href="/manage/5/update_status/{{ lab.id }}/" class="btn-sm btn-danger" role="button">Start/Stop</a>
                 {% endif %}
-                <a href="/manage/5/delete/{{ lab.id }}/" class="btn-sm btn-danger" role="button">删除</a>
+                <a href="/manage/5/delete/{{ lab.id }}/" class="btn-sm btn-danger" role="button">Delete</a>
               <a href="#" class = "lab-info" dest={{lab.id}}><span class="glyphicon glyphicon-question-sign"></span></a></td>
               </tr>
                 {% endfor %}
@@ -61,14 +61,14 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">新增实验</h4>
+                <h4 class="modal-title">Newly add experment</h4>
               </div>
               <div class="modal-body">
                 <table class = "table table-bordered">
             
                   <tbody>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">评价数量：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Assessment number：</td>
       
                       <td >
                         <form class="form-inline">
@@ -83,17 +83,17 @@
                     </tr>
                     
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">比较内容：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Comparison：</td>
                       <td >
                         <select id="lab-func" class="form-control">
-                          <option value="1">不同设备相同场景</option>
-                          <option value="2">相同设备不同场景</option>
+                          <option value="1">Different device, same scene</option>
+                          <option value="2">Same device, different scene</option>
                         </select>
                       </td>
                     </tr>
                     
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">设备集：</td>
+                      <td class = "td-info" style="vertical-align:middle;">device list：</td>
       
                       <td>
                         {% for device in devices %}
@@ -105,7 +105,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">照片集：</td>
+                      <td class = "td-info" style="vertical-align:middle;">image list：</td>
       
                       <td id="co-td">
                         {% for co in co_list %}
@@ -116,22 +116,22 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">定时任务：</td>
+                      <td class = "td-info" style="vertical-align:middle;">timely task：</td>
       
                       <td>
                         
                           <label class="radio-inline">
-                            <input type="radio" name="time"  value="1"> 是
+                            <input type="radio" name="time"  value="1"> Yes
                           </label>
                           <label class="radio-inline">
-                            <input type="radio" name="time" value="0"> 否
+                            <input type="radio" name="time" value="0"> No
                           </label>
                         
                       </td>
                       
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">起止时间：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Start Stop Time：</td>
       
                       <td>
                         
@@ -156,7 +156,7 @@
                 </table>
               </div>
               <div class="modal-footer">
-                <button id = "btn-form-newlab" class="btn btn-primary" >确定</button>
+                <button id = "btn-form-newlab" class="btn btn-primary" >Confirm</button>
               </div>
             </div>
           </div>
@@ -167,14 +167,14 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">实验信息</h4>
+                <h4 class="modal-title">Experiment Info</h4>
               </div>
               <div class="modal-body">
                 <table class = "table table-bordered">
             
                   <tbody>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">评价数量：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Assessment number：</td>
       
                       <td id ="info-1">
                         
@@ -183,28 +183,28 @@
                     </tr>
                     
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">比较内容：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Comparison：</td>
                       <td id ="info-2">
                         
                       </td>
                     </tr>
                     
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">设备集：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Device list：</td>
       
                       <td id ="info-3">
 
                       </td>
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">照片集：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Image List：</td>
       
                       <td id ="info-4">
         
                       </td>
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">定时任务：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Timely Task：</td>
       
                       <td id ="info-5">
                                                 
@@ -212,7 +212,7 @@
                       
                     </tr>
                     <tr>
-                      <td class = "td-info" style="vertical-align:middle;">起止时间：</td>
+                      <td class = "td-info" style="vertical-align:middle;">Start Stop Time：</td>
       
                       <td id ="info-6">
                         
@@ -244,7 +244,7 @@
 <script>
  
   function tips(){
-    showModal('提示','只能同时开展一个实验！');
+    showModal('Show','One can do only one experment at a time!');
   }
   $("#newlab").click(function(){
     $("#myModal-newlab").modal();
@@ -315,7 +315,7 @@
     if(num && func && time  && devices && co_list){
         if(time==1){
           if(parseInt(time_start)>=parseInt(time_stop)){
-            alert("起止时间输入有误！");
+            alert("Error in Start Stop Time");
             return
           }
         }
@@ -342,7 +342,7 @@
         
     }
     else{
-        alert("请将必填项填写完整");
+        alert("Please fill in the required items");
     }
     
   })
@@ -365,20 +365,20 @@
                   $("#info-1").html(msg.num);
                   if(msg.func==1)
                   {
-                    $("#info-2").html('不同设备相同场景');
+                    $("#info-2").html('Different device same scene');
                   }
                   else{
-                    $("#info-2").html('相同设备不同场景');
+                    $("#info-2").html('Same device different scene');
                   }
                   $("#info-3").html(msg.devices);
                   $("#info-4").html(msg.co);
                   if(msg.time)
                   {
-                    $("#info-5").html('是');
+                    $("#info-5").html('Yes');
                     $("#info-6").html(msg.time);
                   }
                   else{
-                    $("#info-5").html('否');
+                    $("#info-5").html('No');
                   }
                   $("#myModal-lab-info").modal();
                 }
