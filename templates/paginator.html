@@ -1,7 +1,7 @@
 <div style="width: 100%;border-top:1px solid #eee;padding-bottom: 9px;"></div>
 <div>
     
-    显示第 {{context.start_index}} 到第 {{context.end_index}} 条记录，总共 {{context.count}} 条记录 每页显示
+    Show from Number {{context.start_index}} to Number {{context.end_index}} of the record. Show Total {{context.count}} records in a page.
     <div class="dropup" style="display: inline;">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         {{context.per_page}}
@@ -14,7 +14,7 @@
           <li><a href="?per_page=20">20</a></li>
         </ul>
     </div>
-    条记录
+    records
     <div style="float: right;">
         {% if context.has_previous %}
         <a href="?per_page={{context.per_page}}&&page={{context.previous_page_number}}"><span class = "glyphicon glyphicon-chevron-left"></span></a>
@@ -33,7 +33,7 @@
             {% endfor %}
             </ul>
         </div>
-        页
+        page
         {% if context.has_next %}
         <a href="?per_page={{context.per_page}}&&page={{context.next_page_number}}"><span class = "glyphicon glyphicon-chevron-right"></span></a>
         {% else %}
