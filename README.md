@@ -1,5 +1,5 @@
 # Subjective quality assessment platform 
-- using django-web
+- A web-based cloudsourcing platform using django-web
 - Translated from Chinese to English by ron.lee
   - original :  https://github.com/Max-cvv/IQA-website 
 
@@ -7,13 +7,15 @@
   - It shows two images and the user should choose one with better quality.
   - It allows zoom and panning of two images in a synchronised way.
   - It does not ask the user to score.
-
+  - It is designed to compare the image quality of smartphone models, and the real time ranking of smartphone models can be found in the management backend.
+  However, in the English translation, I changed the 'smartphone model' into '(IR) algorithm' to make it general.
 
 ## Installation
-
+- Django version should be below 3, or there would be errors.
+- The python version the author tested was 3.6.9.
 1. pip install -r requirements.txt
-   Django version should be below 3, or there would be errors.
-2. To use deepzoom [Python Deep Zoom Tools](https://github.com/openzoom/deepzoom.py)  
+   
+2. For the synchronized image comparasion, we use deepzoom [Python Deep Zoom Tools](https://github.com/openzoom/deepzoom.py). To install :  
     `cd deepzoom; python setup.py install; cd ..`
 ## Usage
 - `python manage.py runserver` if you want to access locally
