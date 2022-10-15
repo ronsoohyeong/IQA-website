@@ -1,10 +1,10 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>验证界面</title>
+    <title>To Start an Experiment Session</title>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
     <script src="{% static 'js/inc/jquery-3.5.1.min.js' %}"></script>
     <link href="{% static 'css/login.css' %}" type="text/css" rel="stylesheet"/>
@@ -15,9 +15,9 @@
         <form method="post">
             {% csrf_token %}
             <fieldset>
-                <legend id="word">请输入验证码</legend>
+                <legend id="word">Please enter your participant id</legend>
                 <input id="input1" type="text" name="u">
-                <button  id = "my-btn" class="but" type="submit">确定</button>
+                <button  id = "my-btn" class="but" type="submit">Submit</button>
             </fieldset>
         </form>
     </div>
@@ -39,7 +39,7 @@
         if(flag){
             $("#my-btn").click(function(e){
                 e.preventDefault();
-                alert("请在电脑端登录！");
+                alert("Please use PC to log in.");
             })
         }
     </script>

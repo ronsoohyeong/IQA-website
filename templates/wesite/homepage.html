@@ -1,12 +1,12 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>手机拍摄质量主观评价平台</title>
+    <title>image quality subjective study platform </title>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
     
     <link rel="stylesheet" type="text/css" href="{% static 'css/inc/bootstrap.min.css' %}">
@@ -37,12 +37,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">拍摄质量评价</a>
+          <a class="navbar-brand" href="#">image quality annotation</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#">Home</a></li>
-            <li><a href="http://gr.xjtu.edu.cn/en/web/xqmou/iqa" target="_blank">About</a></li>
+            <li><a href="#" target="_blank">About</a></li>
             <li><a href="#my-footer" dest="footer" class="a-for-highlight">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -58,15 +58,15 @@
         <div class="container">
           <div id = "my-table">
             <div id = "head-for-table">
-              <h1>感谢您的参与！</h1>
+              <h1>Thanks for participating!</h1>
             </div>
             
             <div class="table-responsive">
               <table class="table">
                 <thead>
                   <tr>
-                    <th class = "my-col" >编号</th>
-                    <th>排名</th>
+                    <th class = "my-col" >number</th>
+                    <th>ranking</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -86,8 +86,7 @@
               </table>
             </div>
 
-            <h4><span class = "glyphicon glyphicon-star"></span>以上是根据截至目前所有参与者数据生成的实时手机排名</h4>
-            <p>ps:当前手机型号还比较少，期待您的加入！</p>
+            <h4><span class = "glyphicon glyphicon-star"></span>Above is the ranking based on the particpants up to now.</h4>
           </div>
         </div>
       </div>
@@ -100,10 +99,17 @@
             
               <div class="my-homepage">
                   
-                  <h3>随手拍照已经成为人们生活中的重要组成部分。</h3>
-                  <p>图像所正在研究一个针对摄影器材的主观拍摄质量的评价方法，并且尝试提供市场上主流手机的拍摄质量评价排名。</p>
-                  <p>而这项工作的研究基础是构建手机拍摄照片质量<strong>主观评价数据库</strong>，因此我们制作了该网站开展心理学实验以获取图像主观评价数据。</p>
-                  <p><span class="glyphicon glyphicon-menu-down"></span>照片质量主观评价数据库有如下用途。</p>
+                  <h3>The purpose of this activity </h3>
+                  <p>Smartphone has become the most popular way to take photos. However, the smartphones can be shaken and/ or 
+                    the target object can be moving while taking picture.
+                    Often the photos are taken in poor lighting condition such as night or too bright daylight.
+                    
+                    </p>
+                  <p>Smartphone photos are made by sophisticated machine learning algorithms, 
+                    and the photo quality can be improved by giving a quality scores to sample images. 
+                    That is the purpose of <strong>subjective quality assessment dataset</strong>.
+                    This platform tries to collect human perception of the quality of various photos by a psychological experiment.</p>
+                  <p><span class="glyphicon glyphicon-menu-down"></span>The purpose of the photo quality subjective assessment dataset.</p>
               </div>
             </div>
             
@@ -119,8 +125,9 @@
           <div class = "row" >
             <div class = "col-sm-3" style = "margin-left: 4%;">
               <div class = "my-content-style">
-                <h4>研究图像质量评价算法</h4>
-                <p>基于具有一定规模的图像质量评价数据库，我们可以更加充分地了解人眼视觉系统与图像质量之间的关系，帮助领域内的相关人员更好地研究图像质量算法，从而不断地改善现实生活中的图像质量。</p>
+                <h4>Improve the quality of Image Processing Pipeline or Image Restoration algorithms in the Smartphone.</h4>
+                <p> Smartphone photography involves various algorithms, 
+                  and it can be only improved by creating a dataset that can teach machine to produce higher quality pictures.</p>
               </div>
               
             </div>
@@ -130,8 +137,9 @@
             </div>
             <div class = "col-sm-3 col-sm-offset-1">
               <div class = "my-content-style">
-                <h4>评价算法性能</h4>
-                <p>通过组织主观实验获取的图像主观质量，可以用来与评价算法的评价结果进行对比，以判断算法的性能。同时主观质量评价数据库可以作为基于机器学习的图像质量算法的训练数据。</p>
+                <h4>Improve the Image Quality Assessment method</h4>
+                <p>Humans can instantly notice the quality of a picture, but it's a difficult task for machine.
+                  By building a dataset, we can teach machine to assess the quality of photos better.</p>
               </div>
             </div>
           </div>
@@ -145,17 +153,18 @@
           <div class = "row">
             <div class="col-sm-8">
               <div class = "my-tips-style">
-                <p class = "tips-h">如何参与？</p>
-                <p>1.请您填写右侧的个人信息以帮助我们此次主观实验的信息采集，我们保证只会将其用于后续模型研究之中。</p>
-                <p>2.<span class = "label-star">填写完成后</span>点击问卷下方按钮，您将获得一个<span class = "label-star">验证码</span>。</p>
-                <p>3.点进网页右上角<span class = "label-star">Start Now</span>按钮，输入验证码后即可进入实验平台。<span class = "label-star">请您进入平台前将浏览器最大化并不再变动。</span></p>
-                <p>4.若您不小心关闭实验平台，可以通过验证码重新登入并恢复进程。</p>
+                <p class = "tips-h">How to participate?</p>
+                <p>1.Fill in your personal information on the right. We promise the personal information is used only for developing the algorithmic models.</p>
+                <p>2.Press <span class = "label-star">submit</span> button , then you will be given <span class = "label-star">participant id</span>.</p>
+                <p>3.Press <span class = "label-star">Start Now</span> button on the top right. Enter participant id to enter the session. 
+                  <span class = "label-star">Before entering the session, please maximize the browser and don't change after that.</span></p>
+                <p>4.Even if you unintentionally close the session, you can reenter the session by entering the participant id.</p>
               </div>
               <div class = "my-tips-style">
-                <p class = "tips-h">关于实验开展方式</p>
-                <p>1.针对本次图像主观评价实验，我们采用<span class = "label-star">两两比较</span>的方法以尽可能减少各种因素的干扰。</p>
-                <p>2.比较的两张照片为不同型号手机拍摄的相同场景。</p>
-                <p>3.评价的标准包括但不限于：照片的分辨率，色调真实度。但请您尽量关注于<span class = "label-star">照片本身质量</span>而不是照片内容。</p>
+                <p class = "tips-h">How the experiment is conducted</p>
+                <p>1.This experiment uses <span class = "label-star">parallel comparison</span> method.</p>
+                <p>2.The compared photos are processed with different algorithms of the same scene.</p>
+                <p>3.Please focus on the <span class = "label-star">technical quality of the photo</span> rather than aesthetic beauty of the picture content.</p>
               </div>
 
             </div>
@@ -164,110 +173,110 @@
                 <div id = "my-tips" style = "display: none;text-align: center;color: red;"></div>
                 <div id = "my-loading" style = "display: none;text-align: center;"><img src = "{% static '3.gif' %}" style = "height: 100%;max-width: 100%;" ></div>
                 <div id = "my-loading-after" style = "display: none;text-align: center;margin-top: 100px;">
-                  <div>您的验证码是：</div>
+                  <div>Your participant id is：</div>
                   <div id = "my-yanzhengma"></div>
-                  <div>复制后点击页面右上角"Start Now"按钮进入实验平台</div>
+                  <div>Copy it, then press "Start Now" button on the top right to enter the session.</div>
                 </div>
                 <div id = "my-form">
                   <div class="form-group">
-                    <label>1.您的性别<span class = "label-star">*</span></label> 
+                    <label>1.Gender<span class = "label-star">*</span></label> 
                     <div class="radio">
                     <label class="radio-inline">
-                      <input type="radio" name="gender"  value="1"> 男
+                      <input type="radio" name="gender"  value="1"> Male
                     </label>
                     <label class="radio-inline">
-                      <input type="radio" name="gender" value="2"> 女
+                      <input type="radio" name="gender" value="2"> Female
                     </label>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label>2.您的年龄范围<span class = "label-star">*</span></label> 
+                    <label>2.Your age <span class = "label-star">*</span></label> 
                     <div class="radio">
                       <label>
-                        <input type="radio" name="age"  value="1"> 1-20岁
+                        <input type="radio" name="age"  value="1"> 1-20 years old
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="age"  value="2"> 20-30岁
+                        <input type="radio" name="age"  value="2"> 21-30 years old
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="age"  value="3"> 30-50岁
+                        <input type="radio" name="age"  value="3"> 31-50 years old
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="age"  value="4"> 50岁以上
+                        <input type="radio" name="age"  value="4"> 51 years old or more
                       </label>
                     </div>
                   </div>
 
 
                   <div class="form-group">
-                    <label>3.您是否经常戴眼镜<span class = "label-star">*</span></label> 
+                    <label>3.Do you wear glasses<span class = "label-star">*</span></label> 
                     <div class="radio">
                       <label class="radio-inline">
-                        <input type="radio" name="isGlasses" value="1"> 是
+                        <input type="radio" name="isGlasses" value="1"> Yes
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" name="isGlasses" value="2"> 否
+                        <input type="radio" name="isGlasses" value="2"> No
                       </label>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label>4.您的受教育程度<span class = "label-star">*</span></label> 
+                    <label>4.Your education level <span class = "label-star">*</span></label> 
                     <div class="radio">
                       <label>
-                        <input type="radio" name="edu" value="1"> 高中及以下
+                        <input type="radio" name="edu" value="1"> High school or less
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="edu" value="2"> 大学本科或专科
+                        <input type="radio" name="edu" value="2"> University
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="edu"  value="3"> 硕士研究生
+                        <input type="radio" name="edu"  value="3"> Graduate school
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="edu"  value="4"> 博士及以上
+                        <input type="radio" name="edu"  value="4"> Ph.D or more
                       </label>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label>5.您是否有一定的拍摄习惯<span class = "label-star">*</span></label> 
+                    <label>5.How often do you take photos?<span class = "label-star">*</span></label> 
                     <div class="radio">
                       <label>
-                        <input type="radio" name="pho"  value="1"> 经常
+                        <input type="radio" name="pho"  value="1"> a few times a day or more often
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="pho"  value="2"> 一般
+                        <input type="radio" name="pho"  value="2"> a few times a week
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="pho"  value="3"> 很少
+                        <input type="radio" name="pho"  value="3"> a few times a month
                       </label>
                     </div>
                     <div class="radio">
                       <label>
-                        <input type="radio" name="pho"  value="4"> 几乎没有
+                        <input type="radio" name="pho"  value="4"> a few times a year or less often
                       </label>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="screen">6.您使用的笔记本或显示器品牌</label>
-                    <input type="text" class="form-control" id="screen" placeholder="非必填">
+                    <label for="screen">6. The quality of the display or laptop computer that you are using</label>
+                    <input type="text" class="form-control" id="screen" placeholder="No need to fill in">
                   </div>
 
                   <div class="form-group" id = "form-btn-div">
@@ -287,8 +296,8 @@
       <div class="container">
         <div id = "my-footer">
           <div>Powered by <a href="https://www.djangoproject.com/" target="_blank">Django</a> <a href="https://www.bootcss.com/" target="_blank">Bootstrap</a></div>
-          <div><span class="glyphicon glyphicon-map-marker"> </span> 陕西省西安市碑林区西安交通大学</div>
-          <div><span class="glyphicon glyphicon-envelope"> </span> 1176688537@qq.com</div>
+          <div><span class="glyphicon glyphicon-map-marker"> </span> Ron Lee</div>
+          <div><span class="glyphicon glyphicon-envelope"> </span> ron01.lee@gmail.com</div>
         </div>
         
       </div>

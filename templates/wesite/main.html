@@ -1,12 +1,12 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>图像评价实验平台</title>
+    <title>Experiment Session</title>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
     
     <link rel="stylesheet" type="text/css" href="{% static 'css/inc/bootstrap.min.css' %}">
@@ -30,23 +30,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">图像评价实验平台</a>
+          <a class="navbar-brand" href="#">Experiment Session</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/" target="_blank">Home</a></li>
-            <li><a href="http://gr.xjtu.edu.cn/en/web/xqmou/iqa" target="_blank" >About</a></li>
+            <li><a href="#" target="_blank" >About</a></li>
             
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
 
             <li class = "drop-op"><a href = "#"><input type="checkbox" name="my-checkbox" id = "my-checkbox" class = "my-nav" checked></a></li>
-            <li><a href = "#"  id = "reset-img">复原</a></li>
-            <li id = "li-nextimg"><a href = "#" intro = "2" id = "nextimg">跳过</a></li>
-            <li><a href = "#" intro = "3" id = "reset-choice">取消选择</a></li>
-            <li><a href = "#" id = "tips">教程</a></li>
-            <li><a id = "start-btn" intro = "1" href="#" role="button">下一组</a></li>
+            <li><a href = "#"  id = "reset-img">Restore</a></li>
+            <li id = "li-nextimg"><a href = "#" intro = "2" id = "nextimg">Skip</a></li>
+            <li><a href = "#" intro = "3" id = "reset-choice">Cancel selection</a></li>
+            <li><a href = "#" id = "tips">Tutorial</a></li>
+            <li><a id = "start-btn" intro = "1" href="#" role="button">Next</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -81,8 +81,8 @@
       <div  class="popover-content">
         <div id = "itro-content"></div>
         <div style = "text-align: right;">
-          <button id = "itro-btn-pass" class="itro-btn btn btn-default">跳过教程</button><span>&nbsp&nbsp</span>
-          <button id = "itro-btn-next"class="itro-btn btn btn-primary" style = "float:right">下一步</button>
+          <button id = "itro-btn-pass" class="itro-btn btn btn-default">Skip tutorial</button><span>&nbsp&nbsp</span>
+          <button id = "itro-btn-next"class="itro-btn btn btn-primary" style = "float:right">Next</button>
         </div>
         
       </div>
@@ -93,32 +93,32 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel-for-question">您做出选择时主要取决于下列哪个因素？</h4>
+          <h4 class="modal-title" id="myModalLabel-for-question">What affected your decision the most?</h4>
         </div>
         <div class="modal-body">
           <div style="width: 200px;margin-left: 200px;">
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked class = "my-radio">
-                颜色、色彩
+                Color
               </label>
             </div>
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" class = "my-radio">
-                清晰度
+                Sharpness
               </label>
             </div>
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" class = "my-radio">
-                内容、拍摄角度偏差
+                Content
               </label>
             </div>
             <div class="radio">
               <label>
                 <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" class = "my-radio">
-                其他
+                Others
               </label>
             </div>
             <div class="form-group">
@@ -128,7 +128,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id = "btnModal-for-question" class="btn btn-primary">确定</button>
+          <button type="button" id = "btnModal-for-question" class="btn btn-primary">Confirm</button>
         </div>
       </div>
     </div>
