@@ -65,7 +65,7 @@ def login_decorator(session_item = 'is_login_manager', redirect_url = 'manager_l
     return decorator
 
 
-#获取排名
+# get ranking
 def extract_pair_data(pair_list):
     pair_data = []
     for pair in pair_list:

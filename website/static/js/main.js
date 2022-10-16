@@ -13,7 +13,7 @@ var img_to_test = 0;
 var img_has_test = 0;
 var img_num = 2;
 
-//路径
+//path
 var root_prefixUrl = static_root + "files/images/";
 var rootpath = static_root + "files/photo/";
 $(window).resize(function() {
@@ -32,7 +32,7 @@ $(window).resize(function() {
         });
 });
 
-//调整图片大小位置
+//asjust picture size location
 function resize_window(){
     var col_num = 2;
     var navHeight = 61;
@@ -161,7 +161,7 @@ var show_loading2 = function(){
 }
 
 var enable_btn = function(){
-    if($("#start-btn").html() == '下一组'){
+    if($("#start-btn").html() == 'Next'){
         $("#li-nextimg").removeClass("disabled");
         $("#nextimg").unbind("click");
         $("#nextimg").click(function(){
@@ -193,10 +193,10 @@ viewers[1].addHandler( 'close', show_loading2);
 
 //操作教程
 var introduce_step = 1;
-var html_array = ['这是我们用不同型号手机拍摄的图片，请您选择您认为<span class = "tips"><strong>质量较好</strong></span>的一张。跳过或完成教程后，将进入<span class = "tips"><strong>正式实验环节。',
-    '为查看更多细节，您可以使用鼠标对两张图片进行<span class = "tips"><strong>同步或不同步</strong></span>的<span class = "tips"><strong>放缩和拖动</strong></span>，点击<span class = "tips"><strong>复原</strong></span>获得初始状态。',
-    '若无法判断，您可点击工具栏的<span class = "tips"><strong>跳过</strong></span>。',
-    '当选择完成后，您可以通过键盘上的<span class = "tips"><strong>回车键</strong></span>或导航栏的下一组按钮来继续评价。点击完成将进入正式评价环节。'];
+var html_array = ['These photos are precessed with different algorithms. Please choose <span class = "tips"><strong>which one is better</strong>. </span><span class = "tips"><strong>experiment session',
+    'To allow detailed comparison, you can use mouse to <span class = "tips"><strong>synchronized or unsynchronized </strong></span>的<span class = "tips"><strong>zoom and pan</strong></span>，Press <span class = "tips"><strong>Restore</strong></span>Initialize.',
+    'If it is impossible to judge, you can press <span class = "tips"><strong>Skip</strong></span>.',
+    'After completing a selection, you can continue by pressing <span class = "tips"><strong>Return</strong></span> key or pressing the next button.'];
 var intro_array = ["[intro = 1]","[intro = 2]","[intro = 3]","[intro = 1]"];
 
 $("#itro-btn-pass").click(function(){
@@ -210,7 +210,7 @@ $("#tips").click(function(){
     introduce_step = 1;
     introduce();
     $("#itro-btn-pass").show();
-    $("#itro-btn-next").html("下一步");
+    $("#itro-btn-next").html("Next");
 });
 
 function introduce(){
@@ -221,7 +221,7 @@ function introduce(){
     }
     else{
         if(introduce_step == 4){
-            $("#itro-btn-next").html("完成");
+            $("#itro-btn-next").html("Complete");
             $("#itro-btn-pass").hide();
         }
         //$("[itro-pop]").remove();
@@ -244,7 +244,7 @@ function introduce(){
 $("#my-checkbox").bootstrapSwitch(
     {
         "size":"small",
-        "labelText":'同步',
+        "labelText":'Synchronize',
         "labelWidth": 30,
     }
 );
@@ -303,8 +303,8 @@ function clickButton(){
         resetChoice();
     }
     else{
-        if($("#start-btn").html() == '下一组'){
-            showModalButton("提示", "您还未做出选择，若不对此组做出评价，点击确定按钮跳转到下一步，否则关闭此窗口");
+        if($("#start-btn").html() == 'Next'){
+            showModalButton("Show", "You haven't made selection. If it's impossible to judge, press Skip.");
             $("#btnModal").click(getRecords_Next);
         }
         else{
@@ -358,7 +358,7 @@ function getRecords_Next(){
                 if(msg.progress == 1){
                     $("#li-nextimg").addClass("disabled");
                     $("#nextimg").unbind("click");
-                    $("#start-btn").html("提交");
+                    $("#start-btn").html("Submit");
                 }
                 get_tileSource(tileSources[0],viewers[0], url_xml_1,url_1);
                 get_tileSource(tileSources[1],viewers[1], url_xml_2,url_2);
@@ -420,7 +420,7 @@ function getRecords_Next(){
                 if(msg.progress == 1){
                     $("#li-nextimg").addClass("disabled");
                     $("#nextimg").unbind("click");
-                    $("#start-btn").html("提交");
+                    $("#start-btn").html("Submit");
                 }
                 get_tileSource(tileSources[0],viewers[0], url_xml_1,url_1);
                 get_tileSource(tileSources[1],viewers[1], url_xml_2,url_2);
@@ -437,7 +437,7 @@ function question(){
     
     if(options=='option4'){
         var extra = $("#my-extra").val()
-        if(!extra){$("#my-extra").attr('placeholder', '请填写!');return}
+        if(!extra){$("#my-extra").attr('placeholder', 'Please fill in!');return}
         options = extra;
     }
 
@@ -579,7 +579,7 @@ function showModalButton(header, contain) {
     $('#myModalLabel').html(header);
     $('#myModalBody').html(contain);
     
-    $('#myModalFooter').html('<button type="button" id = "btnModal" data-dismiss="modal" class="btn btn-primary">确定</button>');
+    $('#myModalFooter').html('<button type="button" id = "btnModal" data-dismiss="modal" class="btn btn-primary">Confirm</button>');
     
     $("#myModal").modal();
 }

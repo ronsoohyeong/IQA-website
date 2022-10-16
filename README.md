@@ -33,13 +33,13 @@
 
 1. Main page
 
-   ![image-20220404161043837](https://cdn.jsdelivr.net/gh/Max-cvv/imagehosting/img/image-20220404161043837.png)
+   ![image-20220404161043837](subjective_study_1.png)
 
 2. Experiment page
 
-   ![image-20220404162053194](https://cdn.jsdelivr.net/gh/Max-cvv/imagehosting/img/image-20220404162053194.png)
+   ![image-20220404162053194](subjective_study_2.png)
 
 3. Management page
 
-   ![image-20220404161701745](https://cdn.jsdelivr.net/gh/Max-cvv/imagehosting/img/image-20220404161701745.png)
+   ![image-20220404161701745](subjective_study_3.png)
 

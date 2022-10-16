@@ -19,7 +19,7 @@ $(window).scroll(function() {
     scroll();
 });
 
-//判断当前设备
+// decide present device
 var userAgentInfo = navigator.userAgent;
 var Agents = ["Android", "iPhone",
     "SymbianOS", "Windows Phone",
@@ -36,13 +36,13 @@ for (var v = 0; v < Agents.length; v++) {
 if(flag){
     $("#my-form").hide();
     $("#my-tips").show();
-    $("#my-tips").html('请在电脑端参与');
+    $("#my-tips").html('Please participate in the PC');
     
 }
 else if(is_start == '0'){
     $("#my-form").hide();
     $("#my-tips").show();
-    $("#my-tips").html('未在实验开展时间内');
+    $("#my-tips").html('Not started yet');
 }
 else{
     var cookies = $.cookie('user_check_code');
@@ -100,7 +100,7 @@ else{
             
         }
         else{
-            showModal("提示", "请将必填项填写完整");
+            showModal("Show", "Please fill in all the required items");
         }
         
 
