@@ -44,15 +44,15 @@ function resize_window(){
 resize_window();
 
 
-//配置显示图片
+// layout of images to show
 var tileSources = new Array();
 var viewers = new Array();
 var option = {
     id:  "img1",
     prefixUrl: root_prefixUrl,
-    debugMode: false, //开启调试模式
-    //debugGridColor:'#1B9E77', //调试模式下网格的颜色
-    minZoomLevel: 0.5,  //最小允许放大倍数
+    debugMode: false, //debug mode
+    //debugGridColor:'#1B9E77', //grid color under debug mode
+    minZoomLevel: 0.5,  //minimum possible zoom level 
     showNavigator:false,
     navigatorOpacity:1,
     minPixelRatio:0.5,
@@ -105,7 +105,7 @@ viewers[1].addHandler( 'canvas-scroll', op_log2);
 viewers[0].addHandler( 'canvas-click', ck_left);
 viewers[1].addHandler( 'canvas-click', ck_right);
 
-//加载中动画
+//show gif while loading
 img_loding = '<img id="overlay" src ="'+static_root+'3.gif">';
 $('#img1').append('<div id="overlay">Loading...</div>');
 loading_height = $('#img1').height();
@@ -116,7 +116,7 @@ div_width = $('#overlay').width();
 $('#overlay')
     //.height(docHeight)
     .css({
-    //'opacity': .9, //透明度
+    //'opacity': .9, //opacity
     'position': 'absolute',
     'font-size':'30px',
     'top': loading_height/2-50,
@@ -125,14 +125,14 @@ $('#overlay')
     'width': '150px',
     'height': '50px',
 
-    'z-index': 5000 //保证这个悬浮层位于其它内容之上
+    'z-index': 5000 // guarantee to show this layer on top of all others
     });
 
 $('#img2').append('<div id="overlay1">Loading...</div>');
 $('#overlay1')
     //.height(docHeight)
     .css({
-    //'opacity': .9, //透明度
+    //'opacity': .9, //opacity
     'position': 'absolute',
     'font-size':'30px',
     'top': loading_height/2-50,
@@ -141,7 +141,7 @@ $('#overlay1')
     'width': '150px',
     'height': '50px',
 
-    'z-index': 5000 //保证这个悬浮层位于其它内容之上
+    'z-index': 5000 //guarantee to show this layer on top of all others
     });
 
 var fade_loading1 = function(){
@@ -191,7 +191,7 @@ viewers[0].addHandler( 'close', show_loading1);
 viewers[1].addHandler( 'close', show_loading2);
 
 
-//操作教程
+// tutorial
 var introduce_step = 1;
 var html_array = ['These photos are precessed with different algorithms. Please choose <span class = "tips"><strong>which one is better</strong>. </span><span class = "tips"><strong>experiment session',
     'To allow detailed comparison, you can use mouse to <span class = "tips"><strong>synchronized or unsynchronized </strong></span>的<span class = "tips"><strong>zoom and pan</strong></span>，Press <span class = "tips"><strong>Restore</strong></span>Initialize.',
@@ -240,7 +240,7 @@ function introduce(){
 
 
 
-//同步切换开关
+// turn on/off the 'synchronize' switch 
 $("#my-checkbox").bootstrapSwitch(
     {
         "size":"small",
@@ -286,7 +286,7 @@ $(document).keyup(function(event){
 });
 
 $("#reset-img").click(function(){
-    //alert("窗口:"+window.innerWidth+"屏幕:"+ screen.width);
+    //alert("Window:"+window.innerWidth+"Screen:"+ screen.width);
     viewers[0].viewport.goHome();
     viewers[1].viewport.goHome();
 });

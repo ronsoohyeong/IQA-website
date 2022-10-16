@@ -1,8 +1,8 @@
 $(function(){
 
 function scroll() {
-    //var top = $(".div3").offset().top;//获取导航栏变色的位置距顶部的高度
-    var scrollTop = $(window).scrollTop();//获取当前窗口距顶部的高度
+    //var top = $(".div3").offset().top;//get the height when nav bar changes color
+    var scrollTop = $(window).scrollTop();//get the height of top of the current window 
     //alert(scrollTop);
     if (scrollTop>40) {
         //alert("1");
